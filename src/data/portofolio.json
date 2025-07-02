@@ -1,0 +1,69 @@
+{
+  "Portfolio": [
+    {
+      "title": "OurJournal - Diary writer's platform",
+      "desc": "OurJournal is a web-based platform I created to give people a space to write journals or share personal stories online. The idea came from the need for a more focused and meaningful alternative to social media—where users can freely express their thoughts without distractions. Built with Next.js, the website features GitHub authentication for secure login and uses Sanity.io as the content backend, enabling users to create, manage, and search for journals in real-time. The project reflects my goal to combine clean design, functional development, and user-focused purpose into one meaningful product.",
+      "role": ["Frontend Developer", "UI/UX Designer", "Backend Developer"],
+      "image": [
+        "/portfolio/OurJournal/ourJournal1.png",
+        "/portfolio/OurJournal/ourJournal2.png",
+        "/portfolio/OurJournal/ourJournal3.png",
+        "/portfolio/OurJournal/ourJournal4.png"
+      ],
+      "publicationLink": "https://ourjournal.vercel.app/",
+      "githubLink": "https://github.com/fikrahdamar/ourjournal-app.git"
+    },
+    {
+      "title": "WM Sambal Belut Bu Raden",
+      "desc": "WM Sambal Belut Bu Raden is a real-world web application developed to support a local UMKM in digitizing its food ordering process. The website allows customers to place food orders online and includes features such as membership accounts, redeemable points, and order tracking. On the admin side, the system provides tools for stock management, menu management, and booking oversight, helping the business operate more efficiently. This project was built to address practical needs in a live business setting, aiming to enhance customer experience and improve the operational workflow of a traditional food vendor through technology.",
+      "role": ["Frontend Developer", "UI/UX Designer"],
+      "image": [
+        "/portfolio/WMSambal/WMSambal1.png",
+        "/portfolio/WMSambal/WMSambal2.png",
+        "/portfolio/WMSambal/WMSambal3.png",
+        "/portfolio/WMSambal/WMSambal4.png"
+      ],
+      "publicationLink": "",
+      "githubLink": "https://github.com/fikrahdamar/website-wm-sambal-belut.git"
+    },
+    {
+      "title": "SmartReel - Hybrid Movie Recommendation System",
+      "desc": "SmartReel is a backend recommendation engine I developed to solve the problem of poor movie suggestions caused by sparse user data. Many platforms struggle to give accurate recommendations when there’s not enough user interaction, so I built this system using a hybrid approach that combines collaborative filtering (with Probabilistic Matrix Factorization) and content-based filtering (using an LSTM-Attention model to understand review content). This combination helps improve both accuracy and relevance in recommendations.",
+      "role": ["Backend Developer", "ML Designer"],
+      "image": [
+        "/portfolio/SmartReel/SmartReel1.png",
+        "/portfolio/SmartReel/SmartReel2.png",
+        "/portfolio/SmartReel/SmartReel3.png",
+        "/portfolio/SmartReel/SmartReel4.png"
+      ],
+      "publicationLink": "",
+      "githubLink": "https://github.com/fikrahdamar/hybrid-recommender-backend.git"
+    },
+    {
+      "title": "Fundasi - Web3 Funding Platform for UMKM",
+      "desc": "Fundasi is a Web3-based crowdfunding platform created during a hackathon with my team to support UMKM in raising funds through community-driven campaigns. The platform allows UMKM to offer NFT-based rewards to donors across five contribution levels, where each level unlocks different benefits—making donors feel appreciated and involved. Inspired by Kickstarter and powered by blockchain, Fundasi emphasizes transparency, digital ownership, and social impact. Although the project is still in development, it represents a strong initiative to blend decentralized technology with real-world economic empowerment for small businesses.",
+      "role": ["Backend Developer", "Frontend Developer", "UI/UX Designer"],
+      "image": [
+        "/portfolio/Fundasi/fundasi1.png",
+        "/portfolio/Fundasi/fundasi2.png",
+        "/portfolio/Fundasi/fundasi3.png",
+        "/portfolio/Fundasi/fundasi4.png"
+      ],
+      "publicationLink": "",
+      "githubLink": "https://github.com/FerdaKoplo/Fundasi.git"
+    },
+    {
+      "title": "Arasaka - Digital Social Media Project",
+      "desc": "Arasaka is a desktop-based project management application developed using Java Swing, designed to support digital social media teams in organizing and executing campaigns more effectively. Inspired by tools like Trello, Arasaka enables users to create boards, manage tasks through drag-and-drop cards, assign roles, set deadlines, and track progress in real time. The goal of the project is to provide an intuitive interface and offline capability tailored to the unique workflow of social media teams, particularly in environments where internet connectivity may be limited. Developed as a standalone application, Arasaka reflects a practical approach to improving digital collaboration, offering a customizable and lightweight solution for project tracking and team coordination.",
+      "role": ["Frontend Developer", "UI/UX Designer"],
+      "image": [
+        "/portfolio/Arasaka/arasaka1.png",
+        "/portfolio/Arasaka/arasaka2.png",
+        "/portfolio/Arasaka/arasaka3.png",
+        "/portfolio/Arasaka/arasaka4.png"
+      ],
+      "publicationLink": "",
+      "githubLink": "https://github.com/Dindamaharn/Social-Media-Project-Management_FP.git"
+    }
+  ]
+}

@@ -8,7 +8,6 @@ import type {
 } from "../../interface/certificates";
 import type { Skill, SkillsData } from "../../interface/skill";
 
-// casting ke tipe sesuai interface
 const certificatesData = rawCertificatesData as CertificatesData;
 const skillsData = rawSkillsData as SkillsData;
 
@@ -42,7 +41,7 @@ const Skills = () => {
   return (
     <>
       {/* Section */}
-      <section id="skills" className="py-16 px-4 bg-gray-50">
+      <section id="skills" className="pt-20 pb-40 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2
             className={`text-4xl font-bold text-center text-gray-900 mb-12 transition-all duration-1000 ${
@@ -58,13 +57,12 @@ const Skills = () => {
                 key={index}
                 className={`bg-[#ffffff8c] md:rounded-3xl rounded-2xl shadow-lg p-8 
                            hover:shadow-2xl hover:scale-105 hover:-translate-y-2
-                           transition-all duration-300 ease-out
+                           transition-all duration-200 
                            ${
                              isLoaded
                                ? "opacity-100 translate-y-0"
                                : "opacity-0 translate-y-8"
                            }`}
-                style={{ transitionDelay: `${300 + index * 150}ms` }}
               >
                 <div className="text-center">
                   <h3 className="text-xl font-regular text-black mb-8 leading-relaxed font-montserrat">
