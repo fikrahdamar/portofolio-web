@@ -1,0 +1,47 @@
+{
+  "webDeveloper": [
+    {
+      "name": "Algorithm & Data Structures with Python (Gold)",
+      "from": "Skilvul",
+      "issued": "Mar 2024",
+      "expired": "Mar 2026",
+      "credentialId": "SUNNA2m9TmC9foVtBWjCTA",
+      "licenseUrl": "https://skilvul.com/certificates/SUNNA2m9TmC9foVtBWjCTA"
+    }
+  ],
+  "editingMotionGraphic": [],
+  "basicMachineLearning": [
+    {
+      "name": "Advanced Python (Gold)",
+      "from": "Skilvul",
+      "issued": "Mar 2024",
+      "expired": "Mar 2026",
+      "credentialId": "7kDnl4a0SQe9gE2a_gqpLA",
+      "licenseUrl": "https://skilvul.com/courses/python-lanjutan/student/fikrahdamars/"
+    },
+    {
+      "name": "Algorithm & Data Structures with Python (Gold)",
+      "from": "Skilvul",
+      "issued": "Mar 2024",
+      "expired": "Mar 2026",
+      "credentialId": "SUNNA2m9TmC9foVtBWjCTA",
+      "licenseUrl": "https://skilvul.com/courses/algorithm-and-data-structures-with-python/student/fikrahdamars/"
+    },
+    {
+      "name": "Getting Started with Python",
+      "from": "Dicoding Indonesia",
+      "issued": "Dec 2023",
+      "expired": "Dec 2026",
+      "credentialId": "GRX5QKDJYZ0M",
+      "licenseUrl": "https://dicoding.com/certificates/GRX5QKDJYZ0M"
+    },
+    {
+      "name": "Learn Basic Data Visualization",
+      "from": "Dicoding Indonesia",
+      "issued": "Nov 2023",
+      "expired": "Nov 2026",
+      "credentialId": "07Z68963RXQR",
+      "licenseUrl": "https://dicoding.com/certificates/07Z68963RXQR"
+    }
+  ]
+}

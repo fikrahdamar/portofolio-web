@@ -1,4 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @layer components {
+  .button-color {
+    @apply bg-gradient-to-r from-[#5361BB] via-[#6C5DBF] to-[#7E5CBA] hover:from-[#4A56A8] hover:via-[#6354AC] hover:to-[#7553A7];
+  }
+}
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
 }
