@@ -1,6 +1,7 @@
 import { useState } from "react";
 import rawPortoData from "../../data/portofolio.json";
 import { useNavigate } from "react-router-dom";
+import { renderMedia } from "../../utils/media";
 
 import type { Portfolio, PortfolioData } from "../../interface/portfolio";
 
@@ -25,34 +26,34 @@ const PortoSection = () => {
   const closeModal = () => {
     setSelectedProject(null);
   };
-
   return (
     <section id="portfolio" className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold text-black mb-4">Portfolio</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-4">
+            Portfolio
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto px-4">
             Discover my latest projects and creative endeavors
           </p>
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
           {displayedProjects.map((project, index) => (
             <div
               key={index}
               className="group relative bg-white/5 shadow-lg backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
             >
-              {/* Project Image */}
               <div className="relative h-64 bg-gradient-to-br from-purple-600 to-pink-600 overflow-hidden">
-                {/* Display first image (index 0) if available */}
+                {/* Display first media (index 0) if available */}
                 {project.image && project.image.length > 0 ? (
-                  <img
-                    src={project.image[0]}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
+                  renderMedia(
+                    project.image[0],
+                    project.title,
+                    "w-full h-full object-cover"
+                  )
                 ) : (
                   <>
                     <div className="absolute inset-0 bg-black/20"></div>
@@ -61,11 +62,7 @@ const PortoSection = () => {
                     </div>
                   </>
                 )}
-
-                {/* Bottom Shadow */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/10 to-transparent"></div>
-
-                {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <button
                     onClick={() => openModal(project)}
@@ -75,17 +72,13 @@ const PortoSection = () => {
                   </button>
                 </div>
               </div>
-
-              {/* Project Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-500 mb-3 group-hover:text-gray-800 transition-colors">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-500 mb-3 group-hover:text-gray-800 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-slate-700 font-montserrat font-regular text-sm line-clamp-2 mb-4">
                   {project.shortDesc}
                 </p>
-
-                {/* Roles */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.role.map((role, roleIndex) => (
                     <span
@@ -96,8 +89,6 @@ const PortoSection = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* Action Button */}
                 <button
                   onClick={() => openModal(project)}
                   className="w-full button-color text-white py-3 rounded-xl font-semibold  transition-all duration-300 transform hover:scale-105"
@@ -108,8 +99,6 @@ const PortoSection = () => {
             </div>
           ))}
         </div>
-
-        {/* See More Button */}
         <div className="text-center pb-28">
           <button
             onClick={handleSeeMore}
@@ -123,7 +112,6 @@ const PortoSection = () => {
       {/* Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-md"
             onClick={closeModal}
@@ -131,31 +119,40 @@ const PortoSection = () => {
 
           {/* Modal Content */}
           <div className="relative bg-slate-800/90 backdrop-blur-xl border border-white/20 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-colors"
+              className="sticky top-4 left-full -translate-x-8 z-[60] bg-white/10 hover:bg-white text-white hover:text-black rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:scale-110 mb-4"
             >
-              ✕
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
 
-            {/* Modal Header - Image Grid */}
             <div className="relative rounded-t-3xl overflow-hidden">
               {selectedProject.image && selectedProject.image.length > 0 ? (
-                <div className="grid grid-cols-2 gap-2 p-4">
-                  {selectedProject.image.slice(0, 4).map((image, index) => (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4">
+                  {selectedProject.image.slice(0, 4).map((media, index) => (
                     <div
                       key={index}
                       className="relative h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden"
                     >
-                      <img
-                        src={image}
-                        alt={`${selectedProject.title} - Image ${index + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      {renderMedia(
+                        media,
+                        `${selectedProject.title} - Media ${index + 1}`,
+                        "w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      )}
                     </div>
                   ))}
-                  {/* Fill remaining slots if less than 4 images */}
                   {selectedProject.image.length < 4 && (
                     <>
                       {Array.from({
@@ -181,9 +178,8 @@ const PortoSection = () => {
               )}
             </div>
 
-            {/* Modal Body */}
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-white mb-4">
+            <div className="p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 {selectedProject.title}
               </h2>
 
@@ -192,7 +188,6 @@ const PortoSection = () => {
                 dangerouslySetInnerHTML={{ __html: selectedProject.desc }}
               />
 
-              {/* Roles */}
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-white mb-3">
                   My Role
@@ -208,17 +203,17 @@ const PortoSection = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-4">
-                <a
-                  href={selectedProject.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
-                >
-                  🐙 View Code
-                </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                {selectedProject.githubLink && (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-3"
+                  >
+                    🐙 View Code
+                  </a>
+                )}
 
                 {selectedProject.publicationLink && (
                   <a

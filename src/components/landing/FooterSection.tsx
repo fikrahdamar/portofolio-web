@@ -94,8 +94,6 @@ const FooterSection = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Let's talk section */}
               <div className="md:text-right">
                 <p className="text-white/80 mb-2 text-sm">contact me</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">

@@ -40,7 +40,6 @@ const Skills = () => {
 
   return (
     <>
-      {/* Section */}
       <section id="skills" className="pt-20 pb-40 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2
@@ -55,7 +54,7 @@ const Skills = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className={`bg-[#ffffff8c] md:rounded-3xl rounded-2xl shadow-lg p-8 
+                className={`bg-[#ffffff8c] md:rounded-3xl rounded-2xl shadow-xl/30 p-8 
                            hover:shadow-2xl hover:scale-105 hover:-translate-y-2
                            transition-all duration-200 
                            ${
@@ -100,7 +99,7 @@ const Skills = () => {
       {/* Modal */}
       {isModalOpen && selectedSkill && (
         <div
-          className="fixed inset-0 backdrop-blur-sm bg-white/30 z-50 flex items-center justify-center p-6"
+          className="fixed inset-0 backdrop-blur-sm bg-black/70 z-50 flex items-center justify-center p-6"
           onClick={handleOverlayClick}
         >
           <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl m-4">
@@ -131,7 +130,6 @@ const Skills = () => {
 
             {/* Modal Content */}
             <div className="p-6 space-y-6">
-              {/* About Skill */}
               <div>
                 <h4 className="text-lg font-semibold font-montserrat text-gray-900 mb-3">
                   About This Skill
@@ -143,8 +141,6 @@ const Skills = () => {
                   }}
                 />
               </div>
-
-              {/* Technologies */}
               <div>
                 <h4 className="text-lg font-semibold font-montserrat text-gray-900 mb-3">
                   Technologies & Skills
@@ -161,7 +157,6 @@ const Skills = () => {
                 </div>
               </div>
 
-              {/* Certificates */}
               <div>
                 <h4 className="text-lg font-semibold font-montserrat text-gray-900 mb-4">
                   Certificates

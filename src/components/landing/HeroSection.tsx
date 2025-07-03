@@ -19,7 +19,6 @@ const HeroSection = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen">
-            {/* Text Content */}
             <div className="space-y-6 pt-16 lg:pt-20 text-center lg:text-left order-2 lg:order-1">
               <div
                 className={`transition-all duration-1000 ${
@@ -64,8 +63,6 @@ const HeroSection = () => {
                 </button>
               </div>
             </div>
-
-            {/* Profile Image */}
             <div
               className={`flex justify-center lg:justify-center transition-all duration-1000 delay-500 order-1 lg:order-2 pt-20 sm:pt-24 lg:pt-0 ${
                 isLoaded
@@ -129,8 +126,6 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Floating Elements - Adjusted for mobile */}
                 <div className="absolute -top-4 sm:-top-6 right-0 sm:right-1 w-8 h-8 sm:w-12 sm:h-12 bg-[#5361BB] rounded-full animate-bounce shadow-lg"></div>
                 <div className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-4 w-6 h-6 sm:w-10 sm:h-10 bg-[#7E5CBA] rounded-full animate-pulse shadow-lg"></div>
               </div>
