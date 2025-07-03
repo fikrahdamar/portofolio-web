@@ -96,7 +96,7 @@ const AboutSection = () => {
 
                 <button
                   onClick={() => {
-                    scrollToSection("portofolio");
+                    scrollToSection("portfolio");
                   }}
                   className="bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-gray-400 px-8 py-3 rounded-full font-medium font-montserrat transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
                 >

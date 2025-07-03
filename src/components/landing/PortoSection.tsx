@@ -6,7 +6,7 @@ import type { Portfolio, PortfolioData } from "../../interface/portfolio";
 
 const portfolioData = rawPortoData as PortfolioData;
 
-const Portfolio = () => {
+const PortoSection = () => {
   const [selectedProject, setSelectedProject] = useState<Portfolio | null>(
     null
   );
@@ -27,7 +27,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <section id="portfolio" className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -42,14 +42,28 @@ const Portfolio = () => {
           {displayedProjects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+              className="group relative bg-white/5 shadow-lg backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
             >
               {/* Project Image */}
               <div className="relative h-64 bg-gradient-to-br from-purple-600 to-pink-600 overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl text-white/30">📱</div>
-                </div>
+                {/* Display first image (index 0) if available */}
+                {project.image && project.image.length > 0 ? (
+                  <img
+                    src={project.image[0]}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-6xl text-white/30">📱</div>
+                    </div>
+                  </>
+                )}
+
+                {/* Bottom Shadow */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/10 to-transparent"></div>
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -64,11 +78,11 @@ const Portfolio = () => {
 
               {/* Project Info */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gray-200 transition-colors">
+                <h3 className="text-xl font-bold text-gray-500 mb-3 group-hover:text-gray-800 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-400 text-sm line-clamp-2 mb-4">
-                  {project.desc}
+                <p className="text-slate-700 font-montserrat font-regular text-sm line-clamp-2 mb-4">
+                  {project.shortDesc}
                 </p>
 
                 {/* Roles */}
@@ -116,7 +130,7 @@ const Portfolio = () => {
           ></div>
 
           {/* Modal Content */}
-          <div className="relative bg-slate-800/90 backdrop-blur-xl border border-white/20 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+          <div className="relative bg-slate-800/90 backdrop-blur-xl border border-white/20 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             {/* Close Button */}
             <button
               onClick={closeModal}
@@ -125,12 +139,46 @@ const Portfolio = () => {
               ✕
             </button>
 
-            {/* Modal Header */}
-            <div className="relative h-64 bg-gradient-to-br from-purple-600 to-pink-600 rounded-t-3xl overflow-hidden">
-              <div className="absolute inset-0 bg-black/20"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-8xl text-white/30">🚀</div>
-              </div>
+            {/* Modal Header - Image Grid */}
+            <div className="relative rounded-t-3xl overflow-hidden">
+              {selectedProject.image && selectedProject.image.length > 0 ? (
+                <div className="grid grid-cols-2 gap-2 p-4">
+                  {selectedProject.image.slice(0, 4).map((image, index) => (
+                    <div
+                      key={index}
+                      className="relative h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden"
+                    >
+                      <img
+                        src={image}
+                        alt={`${selectedProject.title} - Image ${index + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                  {/* Fill remaining slots if less than 4 images */}
+                  {selectedProject.image.length < 4 && (
+                    <>
+                      {Array.from({
+                        length: 4 - selectedProject.image.length,
+                      }).map((_, index) => (
+                        <div
+                          key={`placeholder-${index}`}
+                          className="relative h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl overflow-hidden flex items-center justify-center"
+                        >
+                          <div className="text-4xl text-white/30">📱</div>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div>
+              ) : (
+                <div className="relative h-64 bg-gradient-to-br from-purple-600 to-pink-600 rounded-t-3xl overflow-hidden">
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-8xl text-white/30">🚀</div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Modal Body */}
@@ -139,9 +187,10 @@ const Portfolio = () => {
                 {selectedProject.title}
               </h2>
 
-              <p className="text-slate-300 text-lg mb-6 leading-relaxed">
-                {selectedProject.desc}
-              </p>
+              <div
+                className="text-slate-300 mb-8 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: selectedProject.desc }}
+              />
 
               {/* Roles */}
               <div className="mb-8">
@@ -186,8 +235,8 @@ const Portfolio = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
-export default Portfolio;
+export default PortoSection;
