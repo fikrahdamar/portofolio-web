@@ -110,10 +110,10 @@ const PortoSection = () => {
         </div>
 
         {/* See More Button */}
-        <div className="text-center">
+        <div className="text-center pb-28">
           <button
             onClick={handleSeeMore}
-            className="bg-white/10 backdrop-blur-sm text-black px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/30 transform hover:scale-105"
+            className="bg-gradient-to-r button-color text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             See More Projects
           </button>

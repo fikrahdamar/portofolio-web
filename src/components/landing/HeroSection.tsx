@@ -17,9 +17,10 @@ const HeroSection = () => {
           <div className="absolute left-0 top-0 w-1/2 h-full bg-gray-50"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen">
-            <div className="space-y-6 pt-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen">
+            {/* Text Content */}
+            <div className="space-y-6 pt-16 lg:pt-20 text-center lg:text-left order-2 lg:order-1">
               <div
                 className={`transition-all duration-1000 ${
                   isLoaded
@@ -27,13 +28,13 @@ const HeroSection = () => {
                     : "opacity-0 translate-y-8"
                 }`}
               >
-                <h1 className="text-5xl lg:text-6xl font-montserrat font-light text-gray-800 mb-2">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-light text-gray-800 mb-2">
                   Hello,
                 </h1>
-                <h2 className="text-3xl lg:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold font-montserrat text-gray-900 mb-4">
                   I am Fikrah Damar Huda
                 </h2>
-                <p className="text-xl lg:text-2xl text-gray-600 mb-8 font-regular font-montserrat">
+                <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-8 font-regular font-montserrat">
                   Programmer
                 </p>
               </div>
@@ -47,7 +48,7 @@ const HeroSection = () => {
               >
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="button-color text-white px-8 py-3 rounded-full font-medium font-montserrat transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
+                  className="button-color text-white px-6 sm:px-8 py-3 rounded-full font-medium font-montserrat transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2 mx-auto lg:mx-0"
                 >
                   about me
                   <svg
@@ -64,15 +65,16 @@ const HeroSection = () => {
               </div>
             </div>
 
+            {/* Profile Image */}
             <div
-              className={`flex justify-center lg:justify-center transition-all duration-1000 delay-500 ${
+              className={`flex justify-center lg:justify-center transition-all duration-1000 delay-500 order-1 lg:order-2 pt-20 sm:pt-24 lg:pt-0 ${
                 isLoaded
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-8"
               }`}
             >
               <div className="relative">
-                <div className="w-96 h-96 lg:w-[450px] lg:h-[450px] relative">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] relative">
                   <div className="w-full h-full relative overflow-hidden">
                     <svg width="0" height="0" className="absolute">
                       <defs>
@@ -128,8 +130,9 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="absolute -top-6 right-1 w-12 h-12 bg-[#5361BB] rounded-full animate-bounce shadow-lg"></div>
-                <div className="absolute -bottom-6 -left-4 w-10 h-10 bg-[#7E5CBA] rounded-full animate-pulse shadow-lg"></div>
+                {/* Floating Elements - Adjusted for mobile */}
+                <div className="absolute -top-4 sm:-top-6 right-0 sm:right-1 w-8 h-8 sm:w-12 sm:h-12 bg-[#5361BB] rounded-full animate-bounce shadow-lg"></div>
+                <div className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-4 w-6 h-6 sm:w-10 sm:h-10 bg-[#7E5CBA] rounded-full animate-pulse shadow-lg"></div>
               </div>
             </div>
           </div>
