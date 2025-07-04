@@ -27,7 +27,7 @@ const AboutSection = () => {
       className="relative min-h-screen bg-gray-50 overflow-visible"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full min-h-screen">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full min-h-screen py-16 sm:py-20 lg:py-0">
           <div className="hidden lg:flex justify-center items-center">
             <div
               className={`transition-all duration-1000 delay-300 ${
@@ -37,7 +37,7 @@ const AboutSection = () => {
               <img src={aboutMeImage} alt="about-me-icon" />
             </div>
           </div>
-          <div className="space-y-8 lg:pl-8">
+          <div className="space-y-6 lg:space-y-8 lg:pl-8">
             <div
               className={`transition-all duration-1000 ${
                 isVisible
@@ -45,7 +45,7 @@ const AboutSection = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <h2 className="text-5xl lg:text-6xl font-montserrat font-semibold text-gray-900 mb-8">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-semibold text-gray-900 mb-6 lg:mb-8">
                 About me
               </h2>
             </div>
@@ -57,7 +57,7 @@ const AboutSection = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 font-montserrat">
+              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 lg:mb-8 font-montserrat">
                 Hi, I'm Fikrah Damar Huda, or just Damar — a creative tech
                 enthusiast with a passion for web development, machine learning,
                 and visual storytelling. As a student at UPN Veteran Jawa Timur,

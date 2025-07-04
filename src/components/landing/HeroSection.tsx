@@ -18,8 +18,8 @@ const HeroSection = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen">
-            <div className="space-y-6 pt-16 lg:pt-20 text-center lg:text-left order-2 lg:order-1">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center min-h-screen">
+            <div className="space-y-6 pt-8 sm:pt-8 lg:pt-15 text-center lg:text-left order-2 lg:order-1">
               <div
                 className={`transition-all duration-1000 ${
                   isLoaded
@@ -64,7 +64,7 @@ const HeroSection = () => {
               </div>
             </div>
             <div
-              className={`flex justify-center lg:justify-center transition-all duration-1000 delay-500 order-1 lg:order-2 pt-20 sm:pt-24 lg:pt-0 ${
+              className={`flex justify-center lg:justify-center transition-all duration-1000 delay-500 order-1 lg:order-2 pt-12 sm:pt-16 lg:pt-0 ${
                 isLoaded
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-8"
